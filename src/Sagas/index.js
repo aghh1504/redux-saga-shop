@@ -5,7 +5,7 @@ import {BASE_URL} from '../config'
 
 export function* fetchMenu(action) {
    try {
-      const menu = yield call(get, `${BASE_URL}getItems`)
+      const menu = yield call(get, `${BASE_URL}online/takeaway`)
       yield put({type: types.FETCH_MENU_SUCCESS, data: menu});
    } catch (e) {
       yield put({type: types.FETCH_MENU_ERROR, data: e.error});
@@ -14,7 +14,7 @@ export function* fetchMenu(action) {
 
 export function* addOrder(action) {
    try {
-      const orders = yield call(post, `${BASE_URL}addItem`, action.payload)
+      const orders = yield call(post, `${BASE_URL}online/takeaway/addItem`, action.payload)
       yield put({type: types.ADD_ORDER_SUCCESS, data: orders});
    } catch (e) {
       yield put({type: types.ADD_ORDER_ERROR, message: e.error});
@@ -23,7 +23,7 @@ export function* addOrder(action) {
 
 export function* checkoutOrder(action) {
    try {
-      const checkout = yield call(post, `${BASE_URL}checkoutItem`, action.payload)
+      const checkout = yield call(post, `${BASE_URL}online/takeaway/checkoutItem`, action.payload)
       yield put({type: types.CHECKOUT_ORDER_SUCCESS, data: checkout});
    } catch (e) {
       yield put({type: types.CHECKOUT_ORDER_ERROR, message: e.error});

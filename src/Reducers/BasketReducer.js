@@ -10,7 +10,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         basket: state.basket.map(item => {
-          if(item.id !== Number(action.payload)) {
+          if(item.id !== action.payload) {
             return item
           } else {
             return {

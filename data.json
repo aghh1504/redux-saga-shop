@@ -1,1 +1,184 @@
-[{"id":5,"text":"bali","isChecked":false},{"id":4,"text":"hawaii","isChecked":false},{"id":3,"text":"maledives","isChecked":false},{"id":2,"text":"filipiny","isChecked":false},{"id":1,"text":"mexico","isChecked":false}]
+[{
+    "sandwishes": [
+        {
+            "id": 1,
+            "preparationTimeSeconds": 600,
+            "name": "Tikka Naan Roll",
+            "description": "Filets de poulet marinés et rôtis au Tandoor roulé dans un naan",
+            "options": [
+                {
+                    "name": "Supplement fromage",
+                    "price": 1
+                }
+            ],
+            "price": 5
+        },
+        {
+            "id": 2,
+            "preparationTimeSeconds": 600,
+            "name": "Sheek Naan Roll",
+            "description": "Brochette de boeuf haché rôtie au Tandoor roulée dans un naan",
+            "options": [
+                {
+                    "name": "Supplement fromage",
+                    "price": 1
+                }
+            ],
+            "price": 5
+        },
+        {
+            "id": 3,
+            "preparationTimeSeconds": 600,
+            "name": "Pakora Naan Roll",
+            "description": "Beignets d'aubergines à la farine de poix chiche roulés dans un naan",
+            "options": [
+                {
+                    "name": "Supplement fromage",
+                    "price": 1
+                }
+            ],
+            "price": 5
+        },
+        {
+            "id": 4,
+            "preparationTimeSeconds": 600,
+            "name": "Paneer Naan Roll",
+            "description": "Fromage indien maison mariné et rôti au Tandoor roulé dans un naan",
+            "options": [
+                {
+                    "name": "Supplement fromage",
+                    "price": 1
+                }
+            ],
+            "price": 6.50
+        },
+        {
+            "id": 5,
+            "preparationTimeSeconds": 300,
+            "name": "Frites",
+            "price": 2.50
+        },
+        {
+            "id": 6,
+            "preparationTimeSeconds": 300,
+            "name": "Pakoras",
+            "price": 3
+        }
+    ],
+    "drinks": [
+        {
+            "id": 100,
+            "name": "Coca",
+            "price": 2
+        },
+        {
+            "id": 101,
+            "name": "Coca Light",
+            "price": 2
+        },
+        {
+            "id": 102,
+            "name": "Coca Zéro",
+            "price": 2
+        },
+        {
+            "id": 103,
+            "name": "Orangina",
+            "price": 2
+        },
+        {
+            "id": 104,
+            "name": "Shweppes",
+            "price": 2
+        },
+        {
+            "id": 105,
+            "name": "Seven up",
+            "price": 2
+        },
+        {
+            "id": 106,
+            "name": "Ice Tea",
+            "price": 2
+        },
+        {
+            "id": 107,
+            "name": "Perrier 33cl",
+            "price": 2
+        },
+        {
+            "id": 108,
+            "name": "Badoit 33cl",
+            "price": 2
+        },
+        {
+            "id": 109,
+            "name": "Jus de Tomate",
+            "price": 2
+        },
+        {
+            "id": 110,
+            "name": "Jus Pago",
+            "price": 2,
+            "flavor": [
+                "Orange",
+                "Mangue",
+                "Abricot",
+                "Fraise"
+            ]
+        },
+        {
+            "id": 111,
+            "name": "Kingfisher bière indienne",
+            "price": 5
+        },
+        {
+            "id": 112,
+            "name": "Duvel",
+            "price": 5
+        },
+        {
+            "id": 113,
+            "name": "Leffre Brune",
+            "price": 5
+        },
+        {
+            "id": 114,
+            "name": "Pelforth brune",
+            "price": 5
+        }
+    ],
+    "setMenu": [
+        {
+            "id": 200,
+            "name": "Menu sandwichs",
+            "description": "Sandwich Tandoori, Frite, Boisson soda eau gazeuse ou plate",
+            "price": 8,
+            "eligible": {
+                "dishes": [
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "sides": [
+                    5
+                ],
+                "drinks": [
+                    100,
+                    101,
+                    102,
+                    103,
+                    104,
+                    105,
+                    106,
+                    107,
+                    108,
+                    109,
+                    110
+                ]
+            }
+        }
+    ]
+}
+]

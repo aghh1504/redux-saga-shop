@@ -26,20 +26,20 @@ const updateItems = res => {
   });
 }
 
-app.get('/getItems', function(req, res){
+app.get('/online/takeaway/', function(req, res){
   res.send(savedItems)
 })
 
-app.post('/addItem', function(req, res){
+app.post('/online/takeaway/addItem', function(req, res){
   //const newItem = req.body.data;
   res.send('item added')
 })
 
-app.post('/checkoutItem', function(req, res){
+app.post('/online/takeaway/checkoutItem', function(req, res){
   res.send('checkout successfull')
 })
 
-app.post('/deleteItem', function(req, res){
+app.post('/online/takeaway/deleteItem', function(req, res){
   const deleteId = req.body.id
   savedItems = savedItems.filter(item => item.id !== deleteId)
   updateItems(res)

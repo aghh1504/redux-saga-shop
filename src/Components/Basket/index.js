@@ -1,7 +1,7 @@
 /*eslint-disable no-unused-vars */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {  checkoutOrders, checkedCheckoutInput } from '../Actions'
+import {  checkoutOrders, checkedCheckoutInput } from '../../Actions'
 
 class Basket extends Component {
 
@@ -11,7 +11,7 @@ class Basket extends Component {
   }
 
   render() {
-    const {basket} = this.props
+    const {basket, checkedCheckoutInput} = this.props
     if(basket.length<1) {
       return <div><p>Basket</p><div>0 items</div></div>
     }
@@ -22,8 +22,8 @@ class Basket extends Component {
               {
                 basket.map((item,i) => (
                   <div key={i}>
-                    <li style={{display: 'inline-block'}}>{item.text}</li>
-                    <input type='checkbox' style={{display: 'inline-block'}} checked={item.isChecked} onChange={() => this.props.checkedCheckoutInput(item.id)}/>
+                    <li style={{display: 'inline-block'}}>{item.name}</li>
+                    <input type='checkbox' style={{display: 'inline-block'}} checked={item.isChecked} onChange={() => checkedCheckoutInput(item.id)}/>
                 </div>
                 ))
               }
