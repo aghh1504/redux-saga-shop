@@ -10,8 +10,14 @@ class Basket extends Component {
     this.props.checkoutOrders(checkoutItem)
   }
 
+  calculateTotalPrice = () => {
+    const price = this.props.basket.map(item => item.isChecked ? item.price : null)
+    const total = price.reduce((itemprev, itemnext) => itemprev + itemnext ,0)
+    return total
+  }
+
   render() {
-    const {basket} = this.props
+    const {basket, checkedCheckoutInput} = this.props
     if(basket.length<1) {
       return <div><p>Basket</p><div>0 items</div></div>
     }
@@ -22,19 +28,21 @@ class Basket extends Component {
               {
                 basket.map((item,i) => (
                   <div key={i}>
-                    <li style={{display: 'inline-block'}}>{item.text}</li>
-                    <input type='checkbox' style={{display: 'inline-block'}} checked={item.isChecked} onChange={() => this.props.checkedCheckoutInput(item.id)}/>
+                    <li style={{display: 'inline-block'}}>{item.name}</li>
+                    <div style={{display: 'inline-block', margin: '0.8rem'}}>Price: ${item.price}</div>
+                    <input type='checkbox' style={{display: 'inline-block'}} checked={item.isChecked} onChange={() => checkedCheckoutInput(item.id)}/>
                 </div>
                 ))
               }
             </ul>
+            <div>Total price: ${this.calculateTotalPrice()}</div>
             <button onClick={this.onHandleCheckout}>Checkout</button>
           </div>
       )
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
   return {
       basket: state.basket.basket
     }

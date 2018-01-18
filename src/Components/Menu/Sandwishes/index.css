@@ -1,0 +1,12 @@
+.sandwishes_name {
+  display: inline-block;
+}
+
+.sandwishes_price {
+  display: inline-block;
+  margin: 0 0.8rem;
+}
+
+.sandwishes_checkbox {
+  display: inline-block;
+}

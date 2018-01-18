@@ -1,0 +1,12 @@
+.drinks_name {
+  display: inline-block;
+}
+
+.drinks_price {
+  display: inline-block;
+  margin: 0 0.8rem;
+}
+
+.drinks_checkbox {
+  display: inline-block;
+}

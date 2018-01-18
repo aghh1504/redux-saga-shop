@@ -7,7 +7,7 @@ import createSagaMiddleware from 'redux-saga'
 import { Provider } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import Orders from './Components/Orders'
+import Orders from './Components/Orders/index'
 import rootReducer from './Reducers'
 import rootSaga from './Sagas'
 
