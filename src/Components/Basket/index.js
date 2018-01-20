@@ -42,7 +42,7 @@ class Basket extends Component {
     }
 }
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state) => {
   return {
       basket: state.basket.basket
     }

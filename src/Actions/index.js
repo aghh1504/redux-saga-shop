@@ -9,6 +9,11 @@ export const checkedInput = id => ({
     payload: id
 })
 
+export const checkedSetMenuInput = id => ({
+    type: types.CHECKED_SET_MENU_ITEM,
+    payload: id
+})
+
 export const checkedCheckoutInput = id => ({
     type: types.CHECKED_CHECKOUT_ITEMS,
     payload: id
