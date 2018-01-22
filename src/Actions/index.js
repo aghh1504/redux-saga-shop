@@ -4,16 +4,6 @@ export const fetchMenuRequest = () => ({
     type: types.FETCH_MENU_REQUEST
 })
 
-export const checkedInput = id => ({
-    type: types.CHECKED_ITEM,
-    payload: id
-})
-
-export const checkedSetMenuInput = id => ({
-    type: types.CHECKED_SET_MENU_ITEM,
-    payload: id
-})
-
 export const checkedCheckoutInput = id => ({
     type: types.CHECKED_CHECKOUT_ITEMS,
     payload: id

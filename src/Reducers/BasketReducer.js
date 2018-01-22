@@ -25,7 +25,7 @@ export default function (state = initialState, action) {
     case types.ADD_ORDER_REQUEST: {
       return {
         ...state,
-        basket: action.payload
+        basket: state.basket.concat(action.payload)
       }
     }
 

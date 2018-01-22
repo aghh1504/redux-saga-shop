@@ -1,7 +1,7 @@
 /*eslint-disable no-unused-vars */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchMenuRequest, checkedInput, checkedSetMenuInput, addOrders } from '../../Actions'
+import { fetchMenuRequest, addOrders } from '../../Actions'
 import Basket from '../Basket'
 import Sandwishes from '../Menu/Sandwishes'
 import Drinks from '../Menu/Drinks'
@@ -13,29 +13,21 @@ componentDidMount() {
   this.props.fetchMenuRequest()
 }
 
-addToBasket = () => {
-  const sandwishes = this.props.sandwishes.filter(item => item.isChecked)
-  const options = this.props.options.filter(item => item.isChecked)
-  const drinks = this.props.drinks.filter(item => item.isChecked)
-  const setMenu = this.props.setMenu.filter(item => item.isChecked)
-  const setMenuDishes = this.props.setMenuDishes.filter(item => item.isChecked)
-  const setMenuDrinks = this.props.setMenuDrinks.filter(item => item.isChecked)
-  const checkedItems = [...sandwishes, ...options, ...drinks, ...setMenu, ...setMenuDishes, ...setMenuDrinks]
-  this.props.addOrders(checkedItems)
+addToBasket = (item) => {
+  this.props.addOrders(item)
 }
 
   render() {
-    const {sandwishes, drinks, setMenu, setMenuDishes, setMenuSides, setMenuDrinks, checkedInput, checkedSetMenuInput} = this.props
+    const {sandwishes, drinks, setMenu, setMenuDishes, setMenuSides, setMenuDrinks} = this.props
       return (
         <div>
           <h1>Online</h1>
-          <button onClick={this.addToBasket}>Add to basket</button>
           <h2>Sandwishes</h2>
-          <Sandwishes sandwishes={sandwishes} checkedInput={checkedInput}/>
+          <Sandwishes sandwishes={sandwishes} addToBasket={this.addToBasket}/>
           <h2>Drinks</h2>
-          <Drinks drinks={drinks} checkedInput={checkedInput}/>
+          <Drinks drinks={drinks} addToBasket={this.addToBasket}/>
           <h2>SetMenu</h2>
-          <SetMenu setMenu={setMenu} setMenuDishes={setMenuDishes} setMenuSides={setMenuSides} setMenuDrinks={setMenuDrinks} checkedInput={checkedInput} checkedSetMenuInput={checkedSetMenuInput}/>
+          <SetMenu setMenu={setMenu} setMenuDishes={setMenuDishes} setMenuSides={setMenuSides} setMenuDrinks={setMenuDrinks} addToBasket={this.addToBasket}/>
           <Basket/>
         </div>
       )
@@ -56,8 +48,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
  fetchMenuRequest,
- checkedInput,
- checkedSetMenuInput,
  addOrders
 }
 

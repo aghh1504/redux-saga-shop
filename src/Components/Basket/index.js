@@ -6,12 +6,12 @@ import {  checkoutOrders, checkedCheckoutInput } from '../../Actions'
 class Basket extends Component {
 
   onHandleCheckout = () => {
-    const checkoutItem =  this.props.basket.filter(item => item.isChecked)
-    this.props.checkoutOrders(checkoutItem)
+  //  const checkoutItem =  this.props.basket.filter(item => item.isChecked)
+    this.props.checkoutOrders(this.props.basket)
   }
 
   calculateTotalPrice = () => {
-    const price = this.props.basket.map(item => item.isChecked ? item.price : null)
+    const price = this.props.basket.map(item => item.price )
     const total = price.reduce((itemprev, itemnext) => itemprev + itemnext ,0)
     return total
   }

@@ -1,47 +1,36 @@
 /*eslint-disable no-unused-vars */
 import React, { Component } from 'react'
+import Dropdown from 'react-dropdown'
 import './index.css'
 
 export default class SetMenu extends Component {
 
-  setMenuChoose = (kind) => {
-    const {checkedSetMenuInput} = this.props
-    return (
-      <div>
-        {
-          kind.map((item, i) => (
-              <div key={i}>
-                <h4 style={{display: 'inline-block'}}>{item.name}</h4>
-                <input type='checkbox' id={item.id} style={{display: 'inline-block'}} checked={item.isChecked} onChange={() => checkedSetMenuInput(item.id)}/>
-              </div>
-        ))}
-      </div>
-    )
+  state= {
+    orders:[]
   }
 
-  addSetMenu = () => {
-    const {setMenu, checkedInput} = this.props
-    return setMenu && setMenu.map((item, i) => (
-          <div key={i}>
-            <h4 style={{display: 'inline-block'}}>{item.name}</h4>
-            <p style={{display: 'inline-block'}}>{item.description}</p>
-            <input type='checkbox' id={item.id} style={{display: 'inline-block'}} checked={item.isChecked} onChange={() => checkedInput(item.id)}/>
-          </div>
-    ))
+  _onSelect = (e) => {
+    const {setMenu, setMenuDishes, setMenuDrinks, setMenuSides, addToBasket} = this.props
+    const dishes = setMenuDishes.find(item => item.name === e.value)
+    const drinks = setMenuDrinks.find(item => item.name === e.value)
+    const sides = setMenuSides.find(item => item.name === e.value)
+    const orders = [dishes, drinks, sides].filter(Boolean)
+    this.setState({orders: this.state.orders.concat(orders)})
   }
 
   render() {
-    const {setMenu, setMenuDishes, setMenuDrinks} = this.props
+    const {setMenu, setMenuDishes, setMenuDrinks, setMenuSides, addToBasket} = this.props
+    const dishesOptions = setMenuDishes.map(item=> item.name)
+    const drinksOptions = setMenuDrinks.map(item=> item.name)
+    const sidesOptions = setMenuSides.map(item=> item.name)
       return (
-          <div>
-              {this.addSetMenu()}
-              {setMenu && setMenu.find(item => item.isChecked) ?
-               <div className='setmenu_container'>
-                <div className='setmenu_sandwiches'>Main Sandwiches {this.setMenuChoose(setMenuDishes)}</div>
-                <div className='setmenu_drinks'>Drinks {this.setMenuChoose(setMenuDrinks)}</div>
-              </div>
-              : <div />
-            }
+          <div className='setmenu_container'>
+            <div className='setmenu_dropdown'>
+              <Dropdown options={dishesOptions} value={dishesOptions[0]} onChange={(e) => this._onSelect(e)} placeholder="Select a dish" />
+              <Dropdown options={drinksOptions} value={drinksOptions[0]} onChange={(e) => this._onSelect(e)} placeholder="Select a drink" />
+              <Dropdown options={sidesOptions} value={sidesOptions[0]} onChange={(e) => this._onSelect(e)} placeholder="Select a sides" />
+            </div>
+            <button className='setmenu_button' onClick={() => addToBasket(this.state.orders)}>Add to basket</button>
           </div>
       )
     }
