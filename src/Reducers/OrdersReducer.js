@@ -7,7 +7,8 @@ const initialState = {
     setMenu: [],
     setMenuDishes: [],
     setMenuSides: [],
-    setMenuDrinks: []
+    setMenuDrinks: [],
+    setMenuBasket: []
 }
 
 export default function (state = initialState, action) {
@@ -54,6 +55,13 @@ export default function (state = initialState, action) {
         setMenuDishes: setMenuDishesList,
         setMenuSides: setMenuSidesList,
         setMenuDrinks: setMenuDrinksList
+      }
+    }
+    case types.ADD_SET_MENU_TO_BASKET: {
+      console.log(action.payload);
+      return {
+        ...state,
+        setMenuBasket: action.payload
       }
     }
 

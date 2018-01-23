@@ -1,0 +1,306 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: App should match its empty snapshot 1`] = `
+<div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Coca
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      2
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={100}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Coca Light
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      2
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={101}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Coca Zéro
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      2
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={102}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Orangina
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      2
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={103}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Shweppes
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      2
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={104}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Seven up
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      2
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={105}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Ice Tea
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      2
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={106}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Perrier 33cl
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      2
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={107}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Badoit 33cl
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      2
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={108}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Jus de Tomate
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      2
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={109}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Jus Pago
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      2
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={110}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Kingfisher bière indienne
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      5
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={111}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Duvel
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      5
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={112}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Leffre Brune
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      5
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={113}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="drinks_name"
+    >
+      Pelforth brune
+    </h4>
+    <h5
+      className="drinks_price"
+    >
+      Price $
+      5
+    </h5>
+    <button
+      className="drinks_checkbox"
+      id={114}
+      onClick={[Function]}
+    >
+      Add to basket
+    </button>
+  </div>
+</div>
+`;

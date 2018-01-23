@@ -14,6 +14,11 @@ export const addOrders = data => ({
     payload: data
 })
 
+export const addToSetMenuBasket = data => ({
+    type: types.ADD_SET_MENU_TO_BASKET,
+    payload: data
+})
+
 export const checkoutOrders = data => ({
     type: types.CHECKOUT_ORDER_REQUEST,
     payload: data

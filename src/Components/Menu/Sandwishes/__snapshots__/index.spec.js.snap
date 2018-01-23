@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Sandwishes should match its empty snapshot 1`] = `
+<div>
+  <div>
+    <h4
+      className="sandwishes_name"
+    >
+      Tikka Naan Roll
+    </h4>
+    <h5
+      className="sandwishes_price"
+    >
+      Price $
+      5
+    </h5>
+    <button
+      className="sandwishes_checkbox"
+      id={1}
+      onClick={[Function]}
+    >
+      Add to Basket
+    </button>
+    <div
+      className="sandwishes_extra"
+    >
+      <div
+        className="sandwishes_extra"
+      >
+        Add Extra: 
+        Supplement fromage
+         - $
+        1
+      </div>
+      <button
+        className="sandwishes_checkbox"
+        id={undefined}
+        onClick={[Function]}
+      >
+        Add to Basket
+      </button>
+    </div>
+  </div>
+  <div>
+    <h4
+      className="sandwishes_name"
+    >
+      Sheek Naan Roll
+    </h4>
+    <h5
+      className="sandwishes_price"
+    >
+      Price $
+      5
+    </h5>
+    <button
+      className="sandwishes_checkbox"
+      id={2}
+      onClick={[Function]}
+    >
+      Add to Basket
+    </button>
+    <div
+      className="sandwishes_extra"
+    >
+      <div
+        className="sandwishes_extra"
+      >
+        Add Extra: 
+        Supplement fromage
+         - $
+        1
+      </div>
+      <button
+        className="sandwishes_checkbox"
+        id={undefined}
+        onClick={[Function]}
+      >
+        Add to Basket
+      </button>
+    </div>
+  </div>
+  <div>
+    <h4
+      className="sandwishes_name"
+    >
+      Pakora Naan Roll
+    </h4>
+    <h5
+      className="sandwishes_price"
+    >
+      Price $
+      5
+    </h5>
+    <button
+      className="sandwishes_checkbox"
+      id={3}
+      onClick={[Function]}
+    >
+      Add to Basket
+    </button>
+    <div
+      className="sandwishes_extra"
+    >
+      <div
+        className="sandwishes_extra"
+      >
+        Add Extra: 
+        Supplement fromage
+         - $
+        1
+      </div>
+      <button
+        className="sandwishes_checkbox"
+        id={undefined}
+        onClick={[Function]}
+      >
+        Add to Basket
+      </button>
+    </div>
+  </div>
+  <div>
+    <h4
+      className="sandwishes_name"
+    >
+      Paneer Naan Roll
+    </h4>
+    <h5
+      className="sandwishes_price"
+    >
+      Price $
+      6.5
+    </h5>
+    <button
+      className="sandwishes_checkbox"
+      id={4}
+      onClick={[Function]}
+    >
+      Add to Basket
+    </button>
+    <div
+      className="sandwishes_extra"
+    >
+      <div
+        className="sandwishes_extra"
+      >
+        Add Extra: 
+        Supplement fromage
+         - $
+        1
+      </div>
+      <button
+        className="sandwishes_checkbox"
+        id={undefined}
+        onClick={[Function]}
+      >
+        Add to Basket
+      </button>
+    </div>
+  </div>
+  <div>
+    <h4
+      className="sandwishes_name"
+    >
+      Frites
+    </h4>
+    <h5
+      className="sandwishes_price"
+    >
+      Price $
+      2.5
+    </h5>
+    <button
+      className="sandwishes_checkbox"
+      id={5}
+      onClick={[Function]}
+    >
+      Add to Basket
+    </button>
+  </div>
+  <div>
+    <h4
+      className="sandwishes_name"
+    >
+      Pakoras
+    </h4>
+    <h5
+      className="sandwishes_price"
+    >
+      Price $
+      3
+    </h5>
+    <button
+      className="sandwishes_checkbox"
+      id={6}
+      onClick={[Function]}
+    >
+      Add to Basket
+    </button>
+  </div>
+</div>
+`;
