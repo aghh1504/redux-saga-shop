@@ -14,8 +14,13 @@ export const addOrders = data => ({
     payload: data
 })
 
-export const addToSetMenuBasket = data => ({
-    type: types.ADD_SET_MENU_TO_BASKET,
+export const addToSetMenuSandwitchesBasket = data => ({
+    type: types.ADD_SET_MENU_SANDWITCHES_TO_BASKET,
+    payload: data
+})
+
+export const addToSetMenuDrinksBasket = data => ({
+    type: types.ADD_SET_MENU_DRINKS_TO_BASKET,
     payload: data
 })
 

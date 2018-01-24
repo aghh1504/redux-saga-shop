@@ -8,7 +8,8 @@ const initialState = {
     setMenuDishes: [],
     setMenuSides: [],
     setMenuDrinks: [],
-    setMenuBasket: []
+    setMenuSandwitchesBasket: [],
+    setMenuDrinksBasket: []
 }
 
 export default function (state = initialState, action) {
@@ -31,19 +32,22 @@ export default function (state = initialState, action) {
       const setMenuDishesList = setMenuDishes.map(item => {
         return {
           ...item,
-          price: 0
+          price: 0,
+          isChecked: false
         }
       })
       const setMenuSidesList = setMenuSides.map(item => {
         return {
           ...item,
-          price: 0
+          price: 0,
+          isChecked: false
         }
       })
       const setMenuDrinksList = setMenuDrinks.map(item => {
         return {
           ...item,
-          price: 0
+          price: 0,
+          isChecked: false
         }
       })
       return {
@@ -57,11 +61,17 @@ export default function (state = initialState, action) {
         setMenuDrinks: setMenuDrinksList
       }
     }
-    case types.ADD_SET_MENU_TO_BASKET: {
-      console.log(action.payload);
+    case types.ADD_SET_MENU_SANDWITCHES_TO_BASKET: {
       return {
         ...state,
-        setMenuBasket: action.payload
+        setMenuSandwitchesBasket: [action.payload]
+      }
+    }
+
+    case types.ADD_SET_MENU_DRINKS_TO_BASKET: {
+      return {
+        ...state,
+        setMenuDrinksBasket: [action.payload]
       }
     }
 

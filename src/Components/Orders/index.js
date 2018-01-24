@@ -1,7 +1,7 @@
 /*eslint-disable no-unused-vars */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchMenuRequest, addOrders, addToSetMenuBasket } from '../../Actions'
+import { fetchMenuRequest, addOrders } from '../../Actions'
 import Basket from '../Basket'
 import Sandwishes from '../Menu/Sandwishes'
 import Drinks from '../Menu/Drinks'
@@ -18,7 +18,7 @@ addToBasket = (item) => {
 }
 
   render() {
-    const {sandwishes, drinks, setMenu, setMenuDishes, setMenuSides, setMenuDrinks, addToSetMenuBasket} = this.props
+    const {sandwishes, drinks} = this.props
       return (
         <div>
           <h1>Online</h1>
@@ -27,7 +27,7 @@ addToBasket = (item) => {
           <h2>Drinks</h2>
           <Drinks drinks={drinks} addToBasket={this.addToBasket}/>
           <h2>SetMenu</h2>
-          <SetMenu setMenu={setMenu} setMenuDishes={setMenuDishes} setMenuSides={setMenuSides} setMenuDrinks={setMenuDrinks} addToBasket={this.addToBasket} addToSetMenuBasket={addToSetMenuBasket}/>
+          <SetMenu addToBasket={this.addToBasket}/>
           <Basket/>
         </div>
       )
@@ -38,18 +38,13 @@ const mapStateToProps = (state) => {
   return {
       sandwishes: state.menu.sandwishes,
       options: state.menu.options,
-      drinks: state.menu.drinks,
-      setMenu: state.menu.setMenu,
-      setMenuDishes: state.menu.setMenuDishes,
-      setMenuSides: state.menu.setMenuSides,
-      setMenuDrinks: state.menu.setMenuDrinks
+      drinks: state.menu.drinks
     }
 }
 
 const mapDispatchToProps = {
  fetchMenuRequest,
- addOrders,
- addToSetMenuBasket
+ addOrders
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Orders)
