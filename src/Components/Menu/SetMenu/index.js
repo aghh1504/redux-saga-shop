@@ -8,20 +8,28 @@ class SetMenu extends Component {
 
   state= {
     showDishes: false,
-    showDrinks: false
+    showDrinks: false,
+    active: 0,
+    activeDrink: 0
   }
 
-  onClickHandle = (e,item) => {
-    item.isChecked = !item.isChecked
+  onClickHandleSandwitches = (e,item, key) => {
     this.props.addToSetMenuSandwitchesBasket(item)
+    this.setState({active: key})
+  }
+
+  onClickHandleDrink = (e,item, key) => {
+    console.log('drinks')
+    this.props.addToSetMenuDrinksBasket(item)
+    this.setState({activeDrink: key})
   }
 
   showSetMenuSandwitchesOptions = (e) => {
       return (
         <div className='setmenu-select-box-container'>
           {
-            this.props.setMenuDishes.map(item=> (
-              <div id={item.name} className={`setmenu-select-box-item ${item.isChecked ? 'active': ''}`} onClick={(e) => this.onClickHandle(e,item)}>
+            this.props.setMenuDishes.map((item, key)=> (
+              <div id={item.id} key={item.id} className={`setmenu-select-box-item ${item.id-1 === this.state.active ? 'active': ''}`} onClick={(e) => this.onClickHandleSandwitches(e,item, key)}>
                 {item.name}
               </div>
             ))
@@ -30,12 +38,12 @@ class SetMenu extends Component {
       )
   }
 
-  showSetMenuDrinksOptions = () => {
+  showSetMenuDrinksOptions = (e) => {
       return (
         <div className='setmenu-select-box-container'>
           {
-            this.props.setMenuDrinks.map(item=> (
-              <div className='setmenu-select-box-item' onClick={() => this.props.addToSetMenuDrinksBasket(item)}>
+            this.props.setMenuDrinks.map((item, key)=> (
+              <div id={item.id} key={item.id} className={`setmenu-select-box-item ${item.id-1 === this.state.activeDrink ? 'active': ''}`} onClick={(e) => this.onClickHandleDrink(e,item, key)}>
                 {item.name}
               </div>
             ))
