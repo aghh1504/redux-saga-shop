@@ -55,6 +55,10 @@ class SetMenu extends Component {
         </div>
       )
   }
+  addToBasketSetMenu = (setMenuItemsBasket) => {
+    this.props.addToBasket(setMenuItemsBasket, this.state.quantity)
+    this.setState({showDishes: !this.state.showDishes, showDrinks: !this.state.showDrinks})
+  }
 
   render() {
     const {setMenu, setMenuDishes, setMenuDrinks, setMenuSides, addToBasket, setMenuSandwitchesBasket, setMenuDrinksBasket} = this.props
@@ -71,7 +75,7 @@ class SetMenu extends Component {
               {this.state.showDrinks ? this.showSetMenuDrinksOptions() : null}
               <div className='setmenu-select-box'>Free Frites</div>
               <input  type='number' placeholder="quantity" onChange={this.onHandleQuantity}/>
-              <button className='setmenu_button' onClick={() => addToBasket(setMenuItemsBasket, this.state.quantity)}>Add to basket</button>
+              <button className='setmenu_button' onClick={() => this.addToBasketSetMenu(setMenuItemsBasket)}>Add to basket</button>
             </div>
           </div>
       )
