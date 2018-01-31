@@ -10,7 +10,12 @@ class SetMenu extends Component {
     showDishes: false,
     showDrinks: false,
     active: 0,
-    activeDrink: 0
+    activeDrink: 0,
+    quantity: 0
+  }
+
+  onHandleQuantity = (e) => {
+    this.setState({quantity: e.target.value})
   }
 
   onClickHandleSandwitches = (e,item, key) => {
@@ -19,7 +24,6 @@ class SetMenu extends Component {
   }
 
   onClickHandleDrink = (e,item, key) => {
-    console.log('drinks')
     this.props.addToSetMenuDrinksBasket(item)
     this.setState({activeDrink: key})
   }
@@ -43,7 +47,7 @@ class SetMenu extends Component {
         <div className='setmenu-select-box-container'>
           {
             this.props.setMenuDrinks.map((item, key)=> (
-              <div id={item.id} key={item.id} className={`setmenu-select-box-item ${item.id-1 === this.state.activeDrink ? 'active': ''}`} onClick={(e) => this.onClickHandleDrink(e,item, key)}>
+              <div id={item.id} key={item.id} className={`setmenu-select-box-item ${item.id-100 === this.state.activeDrink ? 'active': ''}`} onClick={(e) => this.onClickHandleDrink(e,item, key)}>
                 {item.name}
               </div>
             ))
@@ -66,7 +70,8 @@ class SetMenu extends Component {
               <div className='setmenu-select-box' onClick={() => this.setState({showDrinks: !this.state.showDrinks})}>Drinks</div>
               {this.state.showDrinks ? this.showSetMenuDrinksOptions() : null}
               <div className='setmenu-select-box'>Free Frites</div>
-              <button className='setmenu_button' onClick={() => addToBasket(setMenuItemsBasket)}>Add to basket</button>
+              <input  type='number' placeholder="quantity" onChange={this.onHandleQuantity}/>
+              <button className='setmenu_button' onClick={() => addToBasket(setMenuItemsBasket, this.state.quantity)}>Add to basket</button>
             </div>
           </div>
       )

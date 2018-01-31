@@ -9,9 +9,10 @@ export const checkedCheckoutInput = id => ({
     payload: id
 })
 
-export const addOrders = data => ({
+export const addOrders = (data, quantity) => ({
     type: types.ADD_ORDER_REQUEST,
-    payload: data
+    payload: data,
+    quantity:quantity
 })
 
 export const addToSetMenuSandwitchesBasket = data => ({

@@ -1,7 +1,8 @@
 import * as types from '../Actions/types'
 
 const initialState = {
-    basket: []
+    basket: [],
+    quantity:0
 }
 
 export default function (state = initialState, action) {
@@ -25,7 +26,8 @@ export default function (state = initialState, action) {
     case types.ADD_ORDER_REQUEST: {
       return {
         ...state,
-        basket: state.basket.concat(action.payload)
+        basket: state.basket.concat(action.payload),
+        quantity: action.quantity
       }
     }
 

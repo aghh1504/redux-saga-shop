@@ -32,22 +32,19 @@ export default function (state = initialState, action) {
       const setMenuDishesList = setMenuDishes.map(item => {
         return {
           ...item,
-          price: 0,
-          isChecked: false
+          price: 0
         }
       })
       const setMenuSidesList = setMenuSides.map(item => {
         return {
           ...item,
-          price: 0,
-          isChecked: false
+          price: 0
         }
       })
       const setMenuDrinksList = setMenuDrinks.map(item => {
         return {
           ...item,
-          price: 0,
-          isChecked: false
+          price: 0
         }
       })
       return {

@@ -6,14 +6,13 @@ import {  checkoutOrders, checkedCheckoutInput } from '../../Actions'
 class Basket extends Component {
 
   onHandleCheckout = () => {
-  //  const checkoutItem =  this.props.basket.filter(item => item.isChecked)
     this.props.checkoutOrders(this.props.basket)
   }
 
   calculateTotalPrice = () => {
     const price = this.props.basket.map(item => item.price )
     const total = price.reduce((itemprev, itemnext) => itemprev + itemnext ,0)
-    return total
+    return total*this.props.quantity
   }
 
   render() {
@@ -29,7 +28,7 @@ class Basket extends Component {
                 basket.map((item,i) => (
                   <div key={i}>
                     <li style={{display: 'inline-block'}}>{item.name}</li>
-                    <div style={{display: 'inline-block', margin: '0.8rem'}}>Price: ${item.price}</div>
+                    <div style={{display: 'inline-block', margin: '0.8rem'}}>Price: {this.props.quantity}x ${item.price}</div>
                     <input type='checkbox' style={{display: 'inline-block'}} checked={item.isChecked} onChange={() => checkedCheckoutInput(item.id)}/>
                 </div>
                 ))
@@ -44,7 +43,8 @@ class Basket extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      basket: state.basket.basket
+      basket: state.basket.basket,
+      quantity: state.basket.quantity
     }
 }
 

@@ -13,8 +13,8 @@ componentDidMount() {
   this.props.fetchMenuRequest()
 }
 
-addToBasket = (item) => {
-  this.props.addOrders(item)
+addToBasket = (item, quantity) => {
+  this.props.addOrders(item, quantity)
 }
 
   render() {
@@ -28,7 +28,7 @@ addToBasket = (item) => {
           <Drinks drinks={drinks} addToBasket={this.addToBasket}/>
           <h2>SetMenu</h2>
           <SetMenu addToBasket={this.addToBasket}/>
-          <Basket/>
+          <Basket />
         </div>
       )
     }
