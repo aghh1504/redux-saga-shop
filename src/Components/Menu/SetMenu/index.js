@@ -1,7 +1,7 @@
 /*eslint-disable no-unused-vars */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchMenuRequest, addOrders, addToSetMenuSandwitchesBasket, addToSetMenuDrinksBasket } from '../../../Actions'
+import { fetchMenuRequest, addOrders, addToSetMenuSandwitchesBasket, addToSetMenuDrinksBasket, onHandleQuantity } from '../../../Actions'
 import './index.css'
 
 class SetMenu extends Component {
@@ -10,12 +10,7 @@ class SetMenu extends Component {
     showDishes: false,
     showDrinks: false,
     active: 0,
-    activeDrink: 0,
-    quantity: 0
-  }
-
-  onHandleQuantity = (e) => {
-    this.setState({quantity: e.target.value})
+    activeDrink: 0
   }
 
   onClickHandleSandwitches = (e,item, key) => {
@@ -56,12 +51,16 @@ class SetMenu extends Component {
       )
   }
   addToBasketSetMenu = (setMenuItemsBasket) => {
-    this.props.addToBasket(setMenuItemsBasket, this.state.quantity)
+    this.props.addToBasket(setMenuItemsBasket)
     this.setState({showDishes: !this.state.showDishes, showDrinks: !this.state.showDrinks})
   }
 
+  onHandleQuantity = e => {
+    this.props.onHandleQuantity(e.target.value, e.target.id)
+  }
+
   render() {
-    const {setMenu, setMenuDishes, setMenuDrinks, setMenuSides, addToBasket, setMenuSandwitchesBasket, setMenuDrinksBasket} = this.props
+    const {setMenu, setMenuDishes, setMenuDrinks, setMenuSides, addToBasket, setMenuSandwitchesBasket, setMenuDrinksBasket, onHandleQuantity} = this.props
     const dishesOptions = setMenuDishes.map(item=> item.name)
     const drinksOptions = setMenuDrinks.map(item=> item.name)
     const sidesOptions = setMenuSides.map(item=> item.name)
@@ -74,7 +73,7 @@ class SetMenu extends Component {
               <div className='setmenu-select-box' onClick={() => this.setState({showDrinks: !this.state.showDrinks})}>Drinks</div>
               {this.state.showDrinks ? this.showSetMenuDrinksOptions() : null}
               <div className='setmenu-select-box'>Free Frites</div>
-              <input  type='number' placeholder="quantity" onChange={this.onHandleQuantity}/>
+              <input  id={setMenu.map(item => item.id)} type='number' placeholder="quantity" onChange={this.onHandleQuantity}/>
               <button className='setmenu_button' onClick={() => this.addToBasketSetMenu(setMenuItemsBasket)}>Add to basket</button>
             </div>
           </div>
@@ -95,7 +94,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
  addToSetMenuDrinksBasket,
- addToSetMenuSandwitchesBasket
+ addToSetMenuSandwitchesBasket,
+ onHandleQuantity
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetMenu)

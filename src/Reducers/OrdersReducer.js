@@ -15,7 +15,7 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case types.FETCH_MENU_SUCCESS: {
-      const sandwishesList = action.data.data.map(item => item.sandwishes.map(item => item))
+      const sandwishesList = action.data.data.map(item => item.sandwishes.map(item => {return {...item, quantity:1}}))
       const drinksList = action.data.data.map(item => item.drinks.map(item => item))
       const setMenuList = action.data.data.map(item => item.setMenu.map(item => item))
       const optionsList = sandwishesList[0].map(item => item.options && item.options.map(item => item))
@@ -69,6 +69,48 @@ export default function (state = initialState, action) {
       return {
         ...state,
         setMenuDrinksBasket: [action.payload]
+      }
+    }
+
+    case types.QUANTITY: {
+      return {
+        ...state,
+        sandwishes: state.sandwishes.map(item => {
+          if(item.id === action.id){
+            return {
+              ...item,
+              quantity: action.payload
+            }
+          }else {
+            return {
+              ...item
+            }
+          }
+        }),
+        drinks: state.drinks.map(item => {
+          if(item.id === action.id){
+            return {
+              ...item,
+              quantity: action.payload
+            }
+          }else {
+            return {
+              ...item
+            }
+          }
+        }),
+        setMenu: state.setMenu.map(item => {
+          if(item.id === action.id){
+            return {
+              ...item,
+              quantity: action.payload
+            }
+          }else {
+            return {
+              ...item
+            }
+          }
+        }),
       }
     }
 

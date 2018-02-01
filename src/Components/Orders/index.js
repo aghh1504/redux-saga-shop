@@ -1,7 +1,7 @@
 /*eslint-disable no-unused-vars */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchMenuRequest, addOrders } from '../../Actions'
+import { fetchMenuRequest, addOrders, onHandleQuantity } from '../../Actions'
 import Basket from '../Basket'
 import Sandwishes from '../Menu/Sandwishes'
 import Drinks from '../Menu/Drinks'
@@ -13,19 +13,19 @@ componentDidMount() {
   this.props.fetchMenuRequest()
 }
 
-addToBasket = (item, quantity) => {
-  this.props.addOrders(item, quantity)
+addToBasket = (item) => {
+  this.props.addOrders(item)
 }
 
   render() {
-    const {sandwishes, drinks} = this.props
+    const {sandwishes, drinks, onHandleQuantity} = this.props
       return (
         <div>
           <h1>Online</h1>
           <h2>Sandwishes</h2>
-          <Sandwishes sandwishes={sandwishes} addToBasket={this.addToBasket}/>
+          <Sandwishes sandwishes={sandwishes} addToBasket={this.addToBasket} onHandleQuantity={onHandleQuantity}/>
           <h2>Drinks</h2>
-          <Drinks drinks={drinks} addToBasket={this.addToBasket}/>
+          <Drinks drinks={drinks} addToBasket={this.addToBasket} onHandleQuantity={onHandleQuantity}/>
           <h2>SetMenu</h2>
           <SetMenu addToBasket={this.addToBasket}/>
           <Basket />
@@ -44,7 +44,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
  fetchMenuRequest,
- addOrders
+ addOrders,
+ onHandleQuantity
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Orders)

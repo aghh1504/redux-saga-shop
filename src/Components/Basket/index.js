@@ -10,9 +10,9 @@ class Basket extends Component {
   }
 
   calculateTotalPrice = () => {
-    const price = this.props.basket.map(item => item.price )
+    const price = this.props.basket.map(item => !item.quantity ? item.price*1 : item.price*item.quantity )
     const total = price.reduce((itemprev, itemnext) => itemprev + itemnext ,0)
-    return total*this.props.quantity
+    return total
   }
 
   render() {
@@ -28,7 +28,7 @@ class Basket extends Component {
                 basket.map((item,i) => (
                   <div key={i}>
                     <li style={{display: 'inline-block'}}>{item.name}</li>
-                    <div style={{display: 'inline-block', margin: '0.8rem'}}>Price: {this.props.quantity}x ${item.price}</div>
+                    <div style={{display: 'inline-block', margin: '0.8rem'}}>Price: {!item.quantity ? 1 : item.quantity}x ${item.price}</div>
                     <input type='checkbox' style={{display: 'inline-block'}} checked={item.isChecked} onChange={() => checkedCheckoutInput(item.id)}/>
                 </div>
                 ))
